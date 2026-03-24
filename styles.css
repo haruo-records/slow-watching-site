@@ -211,22 +211,18 @@ ul {
   margin-bottom: 2rem;
 }
 
-.relation-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
+.relation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
 }
 
-.relation-item {
+.relation-card {
+  border: 1px solid #ddd;
+  padding: 1.6rem 1.8rem;
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
-  padding: 1.2rem 0;
-  border-bottom: 1px solid #e2e2de;
-}
-
-.relation-item:first-child {
-  border-top: 1px solid #e2e2de;
+  gap: 0.75rem;
 }
 
 .relation-link {
@@ -245,8 +241,8 @@ ul {
 
 .relation-desc {
   font-size: 0.88rem;
-  color: #8a8e99;
-  line-height: 1.7;
+  color: #707070;
+  line-height: 1.75;
   font-style: normal;
 }
 
@@ -297,7 +293,7 @@ ul {
     padding: 0 1.5rem;
   }
 
-  .relation-item {
-    gap: 0.3rem;
+  .relation-grid {
+    grid-template-columns: 1fr;
   }
 }
