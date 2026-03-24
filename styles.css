@@ -1,310 +1,304 @@
-/* ===========================
+/* ============================================
    Slow Watching — HARUO
-   styles.css
-   =========================== */
+   styles.css — Minimal, legible, calm.
+   ============================================ */
 
-/* ─── Reset & Base ─────────────────────── */
-
+/* --- Reset & Base --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --color-bg:         #f7f7f6;
+  --color-surface:    #ffffff;
+  --color-text:       #1c2333;
+  --color-muted:      #5a6272;
+  --color-accent:     #2b3a5c;
+  --color-rule:       #d6d8dc;
+  --color-link:       #2b3a5c;
+  --color-link-hover: #4a6099;
+
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-body:    'Helvetica Neue', 'Arial', sans-serif;
+  --font-ui:      'Helvetica Neue', 'Arial', sans-serif;
+
+  --max-width:    720px;
+  --section-gap:  6rem;
+  --line-height:  1.75;
+}
+
 html {
-  font-size: 16px;
+  font-size: 17px;
   scroll-behavior: smooth;
 }
 
 body {
-  background-color: #f9f9f8;
-  color: #2a2d35;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  line-height: 1.75;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: var(--line-height);
   -webkit-font-smoothing: antialiased;
 }
 
-/* ─── Typography ────────────────────────── */
-
-h1, h2, h3 {
-  font-weight: normal;
-  letter-spacing: 0.01em;
+/* --- Layout --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-a {
-  color: inherit;
+/* --- Header --- */
+.site-header {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+
+.site-header__brand {
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-accent);
   text-decoration: none;
 }
 
-ul {
-  list-style: none;
+.site-header__brand:hover {
+  color: var(--color-link-hover);
 }
 
-/* ─── Layout ─────────────────────────────── */
-
-.container {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.container--narrow {
-  max-width: 520px;
-}
-
-/* ─── Header ─────────────────────────────── */
-
-.site-header {
-  padding: 2rem 0;
-  border-bottom: 1px solid #e2e2de;
-}
-
-.header-inner {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.brand {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.78rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #2a2d35;
-  transition: opacity 0.2s ease;
-}
-
-.brand:hover {
-  opacity: 0.55;
-}
-
-/* ─── Sections ───────────────────────────── */
-
-.section {
-  padding: 5rem 0;
-}
-
-.section--hero {
-  padding-top: 6rem;
-  padding-bottom: 4rem;
-}
-
-.section--reflective {
-  padding: 4rem 0;
-  text-align: center;
-  border-top: 1px solid #e2e2de;
-  border-bottom: 1px solid #e2e2de;
-}
-
-.section--closing {
-  padding: 6rem 0 5rem;
-  text-align: center;
-  border-top: 1px solid #e2e2de;
-}
-
-/* ─── Hero ───────────────────────────────── */
-
-.hero-title {
-  font-size: 2.6rem;
+/* --- Typography --- */
+h1, h2, h3 {
+  font-family: var(--font-display);
   font-weight: normal;
+  color: var(--color-accent);
+  line-height: 1.25;
   letter-spacing: -0.01em;
-  color: #1e2029;
-  margin-bottom: 0.6rem;
-  line-height: 1.2;
 }
 
-.hero-sub {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: #7a7e89;
-  margin-bottom: 2.8rem;
+h1 {
+  font-size: 3rem;
+  letter-spacing: -0.03em;
 }
 
-.hero-body p {
-  font-size: 1.05rem;
-  color: #3a3d47;
-  max-width: 600px;
-  margin-bottom: 1.2rem;
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-rule);
+  padding-bottom: 0.6rem;
 }
 
-.hero-body p:last-child {
+p {
+  margin-bottom: 1.25rem;
+  color: var(--color-text);
+}
+
+p:last-child {
   margin-bottom: 0;
 }
 
-/* ─── Reflective ──────────────────────────── */
-
-.reflective-text {
-  font-size: 1.05rem;
-  color: #4a4e5a;
-  line-height: 2;
-  font-style: italic;
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.15s ease;
 }
 
-/* ─── Section Heading ─────────────────────── */
+a:hover {
+  color: var(--color-link-hover);
+}
 
-.section-heading {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+/* --- Sections --- */
+section {
+  padding: var(--section-gap) 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* --- Hero --- */
+.hero {
+  padding: 6rem 0 5rem;
+  border-top: none;
+}
+
+.hero__label {
+  display: inline-block;
+  font-family: var(--font-ui);
   font-size: 0.72rem;
-  letter-spacing: 0.2em;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #7a7e89;
-  margin-bottom: 2rem;
+  color: var(--color-muted);
+  margin-bottom: 1.75rem;
 }
 
-/* ─── Prose ──────────────────────────────── */
+.hero__title {
+  margin-bottom: 1rem;
+}
 
-.prose p {
-  font-size: 1rem;
-  color: #3a3d47;
-  margin-bottom: 1.3rem;
+.hero__sub {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: var(--color-muted);
+  margin-bottom: 2.5rem;
+}
+
+.hero__intro {
+  font-size: 1.05rem;
   max-width: 620px;
 }
 
-.prose p:last-child {
-  margin-bottom: 0;
-}
-
-/* ─── Definition List ────────────────────── */
-
+/* --- Definition list --- */
 .definition-list {
-  margin-bottom: 1.8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .definition-list li {
+  padding: 0.9rem 0 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--color-rule);
+  position: relative;
+  color: var(--color-text);
   font-size: 1rem;
-  color: #3a3d47;
-  padding: 0.55rem 0;
-  border-bottom: 1px solid #e8e8e4;
+}
+
+.definition-list li:first-child {
+  border-top: 1px solid var(--color-rule);
 }
 
 .definition-list li::before {
-  content: "—";
-  margin-right: 0.65rem;
-  color: #b0b3bc;
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-muted);
 }
 
-.definition-note {
-  font-size: 0.95rem;
-  color: #6a6e7a;
-  font-style: italic;
-}
-
-/* ─── Divider ─────────────────────────────── */
-
-.section-divider {
-  padding: 0;
-}
-
-.section-divider hr {
-  border: none;
-  border-top: 1px solid #e2e2de;
-}
-
-/* ─── Relation ───────────────────────────── */
-
-.relation-intro {
-  font-size: 0.95rem;
-  color: #6a6e7a;
-  margin-bottom: 2rem;
-}
-
-.relation-heading {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: 1.9rem;
-  font-weight: normal;
-  letter-spacing: -0.01em;
-  color: #1e2029;
-  margin-bottom: 2rem;
-  line-height: 1.2;
-}
-
+/* --- Relation --- */
 .relation-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.4rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
+/*
+ * ① カードは囲み表示のみ。クリック領域はタイトルリンクに限定。
+ *    <div class="relation-card"> — not an <a> tag
+ */
 .relation-card {
-  background-color: #ffffff;
-  border: 1px solid #ddd;
-  padding: 2rem 2rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.9rem;
+  padding: 1.75rem;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
 }
 
-.relation-link {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.88rem;
-  letter-spacing: 0.06em;
-  color: #2a2d35;
-  text-decoration: underline;
-  transition: opacity 0.2s ease;
-}
-
-.relation-link:hover {
-  opacity: 0.75;
-  text-decoration: underline;
-}
-
-.relation-desc {
-  font-size: 0.9rem;
-  color: #6b6b6b;
-  line-height: 1.8;
-  font-style: normal;
-}
-
-/* ─── Closing ─────────────────────────────── */
-
-.closing-text {
+.relation-card__title {
+  font-family: var(--font-display);
   font-size: 1.1rem;
-  color: #4a4e5a;
-  line-height: 2;
-  font-style: italic;
+  font-weight: normal;
+  color: var(--color-accent);
+  margin-bottom: 0.75rem;
 }
 
-/* ─── Footer ─────────────────────────────── */
+/* タイトルリンクのみクリック可能 */
+.relation-card__title a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
 
-.site-footer {
-  padding: 2.5rem 0;
-  border-top: 1px solid #e2e2de;
+.relation-card__title a:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.relation-card p {
+  font-size: 0.92rem;
+  color: var(--color-muted);
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* --- Footer --- */
+footer {
+  border-top: 1px solid var(--color-rule);
+  /*
+   * ③ フッターの上部余白を広めに設定し、
+   *    コピーライトを画面に自然に溶け込ませる
+   */
+  padding: 4rem 0 2.5rem;
 }
 
 .footer-copy {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  color: #a0a4ae;
+  /*
+   * ③ フォントサイズを小さく、文字色を薄く
+   *    主張を弱め、画面の一部として静かに存在させる
+   */
+  font-size: 0.71rem;       /* ≈ 12px */
+  color: #aaa;
+  margin-bottom: 0;
+  letter-spacing: 0.02em;
 }
 
-/* ─── Responsive ──────────────────────────── */
-
-@media (max-width: 640px) {
-  .section {
-    padding: 3.5rem 0;
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  :root {
+    --section-gap: 4rem;
   }
 
-  .section--hero {
-    padding-top: 4rem;
-    padding-bottom: 3rem;
+  html {
+    font-size: 16px;
   }
 
-  .section--closing {
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  .hero {
     padding: 4rem 0 3.5rem;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .container {
-    padding: 0 1.5rem;
   }
 
   .relation-grid {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
+}
+
+/* --- Footer nav (HARUO project links) --- */
+.footer-nav {
+  margin-bottom: 1.75rem;
+}
+
+.footer-nav__label {
+  font-size: 0.68rem;
+  color: #bbb;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.footer-nav__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 1.25rem;
+}
+
+.footer-nav__links a {
+  font-size: 0.78rem;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer-nav__links a:hover {
+  color: var(--color-accent);
+}
+
+.footer-nav__current {
+  font-size: 0.78rem;
+  color: #ccc;
+  cursor: default;
 }
