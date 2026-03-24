@@ -1,5 +1,5 @@
 /* ============================================
-   Phantom Graph — HARUO
+   HARUO — Concept Sites
    styles.css
    ============================================ */
 
@@ -25,16 +25,19 @@ main {
   display: block;
 }
 
-/* --- Container (中央寄せの核) --- */
-.container {
+/* -------------------------------------------
+   Page Shell
+   header / main / footer を同じ幅で揃える核
+------------------------------------------- */
+.page-shell {
   max-width: 720px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 0 20px;
 }
 
 /* --- Header --- */
 .site-header {
-  padding: 20px;
+  padding: 24px 0 20px;
   border-bottom: 1px solid #d6d8dc;
 }
 
@@ -42,12 +45,17 @@ main {
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
-  color: inherit;
-  letter-spacing: 0.05em;
+  color: #1c2333;
+  letter-spacing: 0.04em;
 }
 
 .site-title:hover {
-  opacity: 0.7;
+  opacity: 0.6;
+}
+
+/* --- Main --- */
+.site-main {
+  padding: 0 0 56px;
 }
 
 /* --- Typography --- */
@@ -61,7 +69,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #2b3a5c;
   margin-bottom: 1rem;
@@ -86,7 +94,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.7;
+  opacity: 0.6;
 }
 
 ul {
@@ -105,12 +113,13 @@ section {
   border-top: 1px solid #d6d8dc;
 }
 
+/* Hero はborder-topなし */
 .hero {
   padding-top: 3.5rem;
   border-top: none;
 }
 
-/* --- Hero --- */
+/* --- Hero parts --- */
 .label {
   font-size: 0.72rem;
   font-weight: 600;
@@ -121,7 +130,7 @@ section {
 }
 
 .sub {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-style: italic;
   color: #5a6272;
   margin-bottom: 2rem;
@@ -157,7 +166,7 @@ section {
   color: #999;
 }
 
-/* --- Relation list (slow-watching only) --- */
+/* --- Relation list (slow-watching) --- */
 dl.relation-list {
   margin: 0;
 }
@@ -179,16 +188,18 @@ dl.relation-list dd {
   font-size: 0.92rem;
 }
 
-/* --- Footer --- */
+/* -------------------------------------------
+   Footer
+   page-shell 内なので左右は自動で揃う。
+   縦余白のみここで管理。
+------------------------------------------- */
 .site-footer {
+  padding: 40px 0 32px;
   border-top: 1px solid #d6d8dc;
-  padding: 3rem 20px 2rem;
-  max-width: 720px;
-  margin: 0 auto;
 }
 
 .footer-nav {
-  margin-bottom: 1.75rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-nav__label {
@@ -196,7 +207,7 @@ dl.relation-list dd {
   color: #bbb;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-nav__links {
@@ -241,5 +252,9 @@ dl.relation-list dd {
 
   section {
     padding: 2.25rem 0;
+  }
+
+  .site-footer {
+    padding: 32px 0 24px;
   }
 }
