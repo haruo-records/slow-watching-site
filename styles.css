@@ -1,99 +1,77 @@
 /* ============================================
-   Slow Watching — HARUO
-   styles.css — Minimal, legible, calm.
+   Phantom Graph — HARUO
+   styles.css
    ============================================ */
 
-/* --- Reset & Base --- */
+/* --- Reset --- */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-:root {
-  --color-bg:         #f7f7f6;
-  --color-surface:    #ffffff;
-  --color-text:       #1c2333;
-  --color-muted:      #5a6272;
-  --color-accent:     #2b3a5c;
-  --color-rule:       #d6d8dc;
-  --color-link:       #2b3a5c;
-  --color-link-hover: #4a6099;
-
-  --font-display: 'Georgia', 'Times New Roman', serif;
-  --font-body:    'Helvetica Neue', 'Arial', sans-serif;
-  --font-ui:      'Helvetica Neue', 'Arial', sans-serif;
-
-  --max-width:    720px;
-  --section-gap:  6rem;
-  --line-height:  1.75;
-}
-
-html {
-  font-size: 17px;
-  scroll-behavior: smooth;
-}
-
+/* --- Base --- */
 body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-body);
-  line-height: var(--line-height);
+  margin: 0;
+  font-family: system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1c2333;
+  background: #f7f7f6;
   -webkit-font-smoothing: antialiased;
 }
 
-/* --- Layout --- */
+main {
+  display: block;
+}
+
+/* --- Container (中央寄せの核) --- */
 .container {
-  width: 100%;
-  max-width: var(--max-width);
+  max-width: 720px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 40px 20px;
 }
 
 /* --- Header --- */
 .site-header {
-  padding: 1.5rem 0;
-  border-bottom: 1px solid var(--color-rule);
+  padding: 20px;
+  border-bottom: 1px solid #d6d8dc;
 }
 
-.site-header__brand {
-  font-family: var(--font-ui);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-accent);
+.site-title {
   text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  color: inherit;
+  letter-spacing: 0.05em;
 }
 
-.site-header__brand:hover {
-  color: var(--color-link-hover);
+.site-title:hover {
+  opacity: 0.7;
 }
 
 /* --- Typography --- */
-h1, h2, h3 {
-  font-family: var(--font-display);
-  font-weight: normal;
-  color: var(--color-accent);
-  line-height: 1.25;
-  letter-spacing: -0.01em;
-}
-
 h1 {
-  font-size: 3rem;
-  letter-spacing: -0.03em;
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #2b3a5c;
+  margin-bottom: 0.75rem;
 }
 
 h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid var(--color-rule);
-  padding-bottom: 0.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2b3a5c;
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #d6d8dc;
 }
 
 p {
-  margin-bottom: 1.25rem;
-  color: var(--color-text);
+  margin-bottom: 1rem;
+  color: #1c2333;
 }
 
 p:last-child {
@@ -101,173 +79,114 @@ p:last-child {
 }
 
 a {
-  color: var(--color-link);
+  color: #2b3a5c;
   text-decoration: underline;
   text-underline-offset: 3px;
-  transition: color 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 a:hover {
-  color: var(--color-link-hover);
+  opacity: 0.7;
+}
+
+ul {
+  padding-left: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.35rem;
+  color: #1c2333;
 }
 
 /* --- Sections --- */
 section {
-  padding: var(--section-gap) 0;
-  border-top: 1px solid var(--color-rule);
+  padding: 3rem 0;
+  border-top: 1px solid #d6d8dc;
 }
 
-/* --- Hero --- */
 .hero {
-  padding: 6rem 0 5rem;
+  padding-top: 3.5rem;
   border-top: none;
 }
 
-.hero__label {
-  display: inline-block;
-  font-family: var(--font-ui);
+/* --- Hero --- */
+.label {
   font-size: 0.72rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-muted);
-  margin-bottom: 1.75rem;
+  color: #5a6272;
+  margin-bottom: 1.25rem;
 }
 
-.hero__title {
-  margin-bottom: 1rem;
-}
-
-.hero__sub {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+.sub {
+  font-size: 1.1rem;
   font-style: italic;
-  color: var(--color-muted);
-  margin-bottom: 2.5rem;
+  color: #5a6272;
+  margin-bottom: 2rem;
 }
 
-.hero__intro {
-  font-size: 1.05rem;
-  max-width: 620px;
+.intro {
+  font-size: 1rem;
+  max-width: 600px;
 }
 
-/* --- Definition list --- */
-.definition-list {
-  list-style: none;
-  padding: 0;
+/* --- Closing --- */
+.closing {
+  padding: 3rem 0 2rem;
+  border-top: 1px solid #d6d8dc;
+}
+
+.closing-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2b3a5c;
+  margin-bottom: 0.3rem;
+}
+
+.closing-sub {
+  font-style: italic;
+  color: #5a6272;
+  font-size: 0.92rem;
+  margin-bottom: 0.5rem;
+}
+
+.closing-credit {
+  font-size: 0.82rem;
+  color: #999;
+}
+
+/* --- Relation list (slow-watching only) --- */
+dl.relation-list {
   margin: 0;
 }
 
-.definition-list li {
-  padding: 0.9rem 0 0.9rem 1.5rem;
-  border-bottom: 1px solid var(--color-rule);
-  position: relative;
-  color: var(--color-text);
-  font-size: 1rem;
+dl.relation-list dt {
+  font-weight: 600;
+  color: #2b3a5c;
+  margin-top: 1.25rem;
+  font-size: 0.95rem;
 }
 
-.definition-list li:first-child {
-  border-top: 1px solid var(--color-rule);
+dl.relation-list dt:first-child {
+  margin-top: 0;
 }
 
-.definition-list li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: var(--color-muted);
-}
-
-/* --- Relation --- */
-.relation-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-
-/*
- * ① カードは囲み表示のみ。クリック領域はタイトルリンクに限定。
- *    <div class="relation-card"> — not an <a> tag
- */
-.relation-card {
-  padding: 1.75rem;
-  background: var(--color-surface);
-  border: 1px solid var(--color-rule);
-}
-
-.relation-card__title {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: normal;
-  color: var(--color-accent);
-  margin-bottom: 0.75rem;
-}
-
-/* タイトルリンクのみクリック可能 */
-.relation-card__title a {
-  color: var(--color-accent);
-  text-decoration: none;
-}
-
-.relation-card__title a:hover {
-  color: var(--color-link-hover);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.relation-card p {
+dl.relation-list dd {
+  margin-left: 0;
+  color: #5a6272;
   font-size: 0.92rem;
-  color: var(--color-muted);
-  line-height: 1.65;
-  margin-bottom: 0;
 }
 
 /* --- Footer --- */
-footer {
-  border-top: 1px solid var(--color-rule);
-  /*
-   * ③ フッターの上部余白を広めに設定し、
-   *    コピーライトを画面に自然に溶け込ませる
-   */
-  padding: 4rem 0 2.5rem;
+.site-footer {
+  border-top: 1px solid #d6d8dc;
+  padding: 3rem 20px 2rem;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-.footer-copy {
-  /*
-   * ③ フォントサイズを小さく、文字色を薄く
-   *    主張を弱め、画面の一部として静かに存在させる
-   */
-  font-size: 0.71rem;       /* ≈ 12px */
-  color: #aaa;
-  margin-bottom: 0;
-  letter-spacing: 0.02em;
-}
-
-/* --- Responsive --- */
-@media (max-width: 600px) {
-  :root {
-    --section-gap: 4rem;
-  }
-
-  html {
-    font-size: 16px;
-  }
-
-  h1 {
-    font-size: 2.25rem;
-  }
-
-  .hero {
-    padding: 4rem 0 3.5rem;
-  }
-
-  .relation-grid {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-  }
-}
-
-/* --- Footer nav (HARUO project links) --- */
 .footer-nav {
   margin-bottom: 1.75rem;
 }
@@ -275,7 +194,7 @@ footer {
 .footer-nav__label {
   font-size: 0.68rem;
   color: #bbb;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   margin-bottom: 0.55rem;
 }
@@ -294,11 +213,33 @@ footer {
 }
 
 .footer-nav__links a:hover {
-  color: var(--color-accent);
+  color: #2b3a5c;
+  opacity: 1;
 }
 
 .footer-nav__current {
   font-size: 0.78rem;
   color: #ccc;
   cursor: default;
+}
+
+.footer-copy {
+  font-size: 0.72rem;
+  color: #aaa;
+  letter-spacing: 0.02em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+
+  section {
+    padding: 2.25rem 0;
+  }
 }
