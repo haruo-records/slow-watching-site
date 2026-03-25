@@ -240,6 +240,30 @@ section {
   cursor: default;
 }
 
+/* --- Concept Nav --- */
+.concept-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0 0;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  flex-wrap: wrap;
+  color: #999;
+}
+.concept-nav__sep { color: #d6d8dc; }
+.concept-nav__links { display: flex; gap: 12px; flex-wrap: wrap; }
+.concept-nav__link {
+  color: #999;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.concept-nav__link:hover { color: #2b3a5c; opacity: 1; }
+.concept-nav__link.current { color: #5a6272; }
+
+/* footer description sub-text */
+.footer-field-desc { color: #bbb; font-size: 0.75rem; }
+
 /* External link indicator */
 a.external::after {
   content: "↗";
