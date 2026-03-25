@@ -133,59 +133,38 @@ section {
   font-size: 1.05rem;
   font-style: italic;
   color: #5a6272;
-  margin-bottom: 2rem;
+  margin-bottom: 0.75rem;
 }
 
-.intro {
-  font-size: 1rem;
-  max-width: 600px;
+.credit {
+  font-size: 0.82rem;
+  color: #999;
 }
 
-/* --- Closing --- */
+/* --- Closing (concept restatement) --- */
 .closing {
   padding: 3rem 0 2rem;
   border-top: 1px solid #d6d8dc;
+  text-align: center;
 }
 
 .closing-title {
   font-size: 1rem;
   font-weight: 600;
   color: #2b3a5c;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
 .closing-sub {
   font-style: italic;
   color: #5a6272;
   font-size: 0.92rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.625rem;
 }
 
 .closing-credit {
-  font-size: 0.82rem;
-  color: #999;
-}
-
-/* --- Relation list (slow-watching) --- */
-dl.relation-list {
-  margin: 0;
-}
-
-dl.relation-list dt {
-  font-weight: 600;
-  color: #2b3a5c;
-  margin-top: 1.25rem;
-  font-size: 0.95rem;
-}
-
-dl.relation-list dt:first-child {
-  margin-top: 0;
-}
-
-dl.relation-list dd {
-  margin-left: 0;
-  color: #5a6272;
-  font-size: 0.92rem;
+  font-size: 0.75rem;
+  color: #aaa;
 }
 
 /* -------------------------------------------
@@ -198,40 +177,82 @@ dl.relation-list dd {
   border-top: 1px solid #d6d8dc;
 }
 
-.footer-nav {
-  margin-bottom: 1.5rem;
-}
-
-.footer-nav__label {
-  font-size: 0.68rem;
-  color: #bbb;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.footer-nav__links {
+.footer-inner {
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 64px;
+  margin-bottom: 1.5rem;
   flex-wrap: wrap;
-  gap: 0.2rem 1.25rem;
 }
 
-.footer-nav__links a {
-  font-size: 0.78rem;
-  color: #999;
+.footer-cta a {
+  font-size: 0.875rem;
+  color: #5a6272;
   text-decoration: none;
-  transition: color 0.15s ease;
+  transition: color 0.18s;
 }
 
-.footer-nav__links a:hover {
+.footer-cta a:hover {
   color: #2b3a5c;
   opacity: 1;
 }
 
-.footer-nav__current {
-  font-size: 0.78rem;
+.footer-concepts__heading {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 0.625rem;
+}
+
+.footer-concepts ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.footer-concepts li {
+  margin-bottom: 0.5rem;
+  line-height: 1.5;
+}
+
+.footer-concepts li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-concepts a {
+  font-size: 0.8125rem;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+
+.footer-concepts a:hover {
+  color: #2b3a5c;
+  opacity: 1;
+}
+
+.footer-concepts .current {
+  font-size: 0.8125rem;
   color: #ccc;
   cursor: default;
+}
+
+/* External link indicator */
+a.external::after {
+  content: "↗";
+  font-size: 0.7em;
+  margin-left: 3px;
+  color: #999;
+  opacity: 0.7;
+  transition: opacity 0.18s, color 0.18s;
+}
+
+a.external:hover::after {
+  opacity: 1;
+  color: #2b3a5c;
 }
 
 .footer-copy {
@@ -252,6 +273,11 @@ dl.relation-list dd {
 
   section {
     padding: 2.25rem 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    gap: 24px;
   }
 
   .site-footer {
