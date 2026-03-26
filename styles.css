@@ -285,6 +285,61 @@ a.external:hover::after {
   letter-spacing: 0.02em;
 }
 
+/* --- Field Nav (position indicator) --- */
+.field-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.5rem 0 1.25rem;
+}
+
+.field-nav__node {
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #1c2333;
+  text-decoration: none;
+  opacity: 0.28;
+  padding: 0.25rem 1.5rem;
+  position: relative;
+  transition: opacity 0.2s;
+}
+
+.field-nav__node + .field-nav__node::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 1px;
+  height: 12px;
+  background: #d6d8dc;
+  transform: translateY(-50%);
+}
+
+.field-nav__node:hover {
+  opacity: 0.75;
+}
+
+.field-nav__node.current {
+  opacity: 1;
+  color: #2b3a5c;
+  cursor: default;
+}
+
+/* --- Slow appear animation --- */
+@keyframes slow-appear {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.slow-appear {
+  opacity: 0;
+  animation: slow-appear 2.5s ease forwards;
+}
+
+.slow-appear:nth-child(1) { animation-delay: 0.5s; }
+.slow-appear:nth-child(2) { animation-delay: 3s; }
+.slow-appear:nth-child(3) { animation-delay: 5.5s; }
+
 /* --- Responsive --- */
 @media (max-width: 600px) {
   h1 {
